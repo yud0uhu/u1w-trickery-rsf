@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class Porker : MonoBehaviour
@@ -28,8 +27,6 @@ public class Porker : MonoBehaviour
 
     public void Call()
     {
-        gameProperties.yourBet = 50;
-        gameProperties.opponentBet = 20;
         gameProperties.yourBet = gameProperties.opponentBet;
         gameProperties.yourTip -= gameProperties.yourBet;
 
