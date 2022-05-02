@@ -16,13 +16,14 @@ public class Porker : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+
     }
 
-// Update is called once per frame
+    // Update is called once per frame
     public void Bet()
     {
-        this.gameObject.SetActive(false);
-        actionCommand.SetActive(false);
+        this.gameObject.SetActive(true);
+        actionCommand.SetActive(true);
         raiseCommand.SetActive(true);
         callCommand.SetActive(true);
         showCardCommand.SetActive(false);
