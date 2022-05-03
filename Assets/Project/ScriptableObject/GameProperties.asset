@@ -17,3 +17,5 @@ MonoBehaviour:
   opponentBet: 50
   yourTip: 20000
   opponentTip: 20000
+  uiMode:
+    value: 0
