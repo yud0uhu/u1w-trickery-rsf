@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text first;
     [SerializeField] Text seccond;
     [SerializeField] Text third;
+    [SerializeField] Text action;
 
     void Start()
     {
@@ -18,9 +19,10 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
+        properties.uiMode.Value = UIMode.Main;
         List<int> numbers = new List<int>();
         int index = 0;
-        for (int i=0; i<=3; i++)
+        for (int i = 0; i <= 2; i++)
         {
             numbers.Add(i);
         }
@@ -28,12 +30,25 @@ public class GameManager : MonoBehaviour
         {
             index = Random.Range(0, numbers.Count);
             first.text = actionDB.levels[numbers[index]].actionName;
+            action.text = actionDB.levels[numbers[index]].line[0];
+            //Debug.Log(index);
             numbers.RemoveAt(index);
+            index = Random.Range(0, numbers.Count);
             seccond.text = actionDB.levels[numbers[index]].actionName;
+            action.text = actionDB.levels[numbers[index]].line[0];
+            //Debug.Log(index);
             numbers.RemoveAt(index);
+            index = Random.Range(0, numbers.Count);
             third.text = actionDB.levels[numbers[index]].actionName;
+            action.text = actionDB.levels[numbers[index]].line[0];
+            //Debug.Log(index);
             numbers.RemoveAt(index);
         }
+    }
+
+    public void onClickAction()
+    {
+        properties.uiMode.Value = UIMode.Action;
     }
 
     public void GameOver()
