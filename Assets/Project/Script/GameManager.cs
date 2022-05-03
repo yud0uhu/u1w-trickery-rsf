@@ -19,16 +19,20 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         List<int> numbers = new List<int>();
+        int index = 0;
         for (int i=0; i<=3; i++)
         {
             numbers.Add(i);
         }
         while (numbers.Count > 0)
         {
-            int index = Random.Range(0, 3);
+            index = Random.Range(0, numbers.Count);
             first.text = actionDB.levels[numbers[index]].actionName;
-            seccond.text = actionDB.levels[numbers[index+1]].actionName;
-            third.text = actionDB.levels[numbers[index + 2]].actionName;
+            numbers.RemoveAt(index);
+            seccond.text = actionDB.levels[numbers[index]].actionName;
+            numbers.RemoveAt(index);
+            third.text = actionDB.levels[numbers[index]].actionName;
+            numbers.RemoveAt(index);
         }
     }
 
