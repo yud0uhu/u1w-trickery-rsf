@@ -16,42 +16,54 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         properties.uiMode.Value = UIMode.Main;
-        StartCoroutine("InitGame");
+        InitGame();
     }
 
-    IEnumerator InitGame()
+
+    void InitGame()
     {
         List<int> numbers = new List<int>();
-        int index = 0;
+        List<int> ransu = new List<int>();
         for (int i = 0; i <= 2; i++)
         {
             numbers.Add(i);
         }
+
         while (numbers.Count > 0)
         {
-            index = Random.Range(0, numbers.Count);
-            first.text = actionDB.levels[numbers[index]].actionName;
-            action.text = actionDB.levels[numbers[index]].line[0];
-            //Debug.Log(index);
-            numbers.RemoveAt(index);
-            index = Random.Range(0, numbers.Count);
-            seccond.text = actionDB.levels[numbers[index]].actionName;
-            action.text = actionDB.levels[numbers[index]].line[0];
-            //Debug.Log(index);
-            numbers.RemoveAt(index);
-            index = Random.Range(0, numbers.Count);
-            third.text = actionDB.levels[numbers[index]].actionName;
-            action.text = actionDB.levels[numbers[index]].line[0];
-            yield return new WaitForSeconds(3.5f);
-            action.text = actionDB.levels[numbers[index]].line[1];
-            //Debug.Log(index);
+            int index = Random.Range(0, numbers.Count);
+
+            ransu.Add(numbers[index]);
+            Debug.Log(ransu);
             numbers.RemoveAt(index);
         }
+
+        first.text = actionDB.levels[ransu[0]].actionName;
+        seccond.text = actionDB.levels[ransu[1]].actionName;
+        third.text = actionDB.levels[ransu[2]].actionName;
+        
+
     }
 
     public void onClickAction()
     {
+        StartCoroutine("Action");
+    }
+
+    IEnumerator Action()
+    {
         properties.uiMode.Value = UIMode.Action;
+        int i = 4;
+        while (i > 0)
+        {
+            if (first.text == actionDB.levels[i].actionName || seccond.text == actionDB.levels[i].actionName || third.text == actionDB.levels[i].actionName)
+            {
+                action.text = actionDB.levels[i].line[0];
+                yield return new WaitForSeconds(3.5f);
+                action.text = actionDB.levels[i].line[1];
+            }
+            i--;
+        }
     }
 
     public void GameOver()
