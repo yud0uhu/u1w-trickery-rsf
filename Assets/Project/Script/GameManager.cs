@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        InitGame();
+        properties.uiMode.Value = UIMode.Main;
+        StartCoroutine("InitGame");
     }
 
-    void InitGame()
+    IEnumerator InitGame()
     {
-        properties.uiMode.Value = UIMode.Main;
         List<int> numbers = new List<int>();
         int index = 0;
         for (int i = 0; i <= 2; i++)
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
             index = Random.Range(0, numbers.Count);
             third.text = actionDB.levels[numbers[index]].actionName;
             action.text = actionDB.levels[numbers[index]].line[0];
+            yield return new WaitForSeconds(3.5f);
+            action.text = actionDB.levels[numbers[index]].line[1];
             //Debug.Log(index);
             numbers.RemoveAt(index);
         }
