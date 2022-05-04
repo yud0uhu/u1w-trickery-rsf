@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text action;
     public List<int> ransu;
 
+    [SerializeField] float wordSpeed;
+    int wordListIndex = 0;
+
     void Start()
     {
         InitGame();
@@ -53,10 +56,21 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(ransu[0]);
         properties.uiMode.Value = UIMode.Action;
-        action.text = actionDB.levels[ransu[num]].line[0];
-        yield return new WaitForSeconds(2.5f);
-        action.text = actionDB.levels[ransu[num]].line[1];
-        yield return new WaitForSeconds(2.5f);
+
+        for (int element = 0; element < 2; element++)
+        {
+            wordListIndex = ransu[num];
+            int wordCount = 0;
+            action.text = "";
+            while (actionDB.levels[wordListIndex].line[element].Length > wordCount)
+            {
+                action.text += actionDB.levels[wordListIndex].line[element][wordCount];
+                wordCount++;
+                yield return new WaitForSeconds(wordSpeed);
+            }
+            yield return new WaitForSeconds(2.5f);
+        }
+
         InitGame();
     }
 
