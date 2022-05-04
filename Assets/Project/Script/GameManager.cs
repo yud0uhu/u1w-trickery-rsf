@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        properties.uiMode.Value = UIMode.Main;
         InitGame();
     }
 
 
     void InitGame()
     {
+        properties.uiMode.Value = UIMode.Main;
         List<int> numbers = new List<int>();
         List<int> ransu = new List<int>();
         for (int i = 0; i <= 2; i++)
@@ -62,9 +62,10 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log(i);
                     action.text = actionDB.levels[i].line[0];
-                    yield return new WaitForSeconds(3.5f);
+                    yield return new WaitForSeconds(2.5f);
                     action.text = actionDB.levels[i].line[1];
-                    break;
+                    yield return new WaitForSeconds(2.5f);
+                    InitGame();
                 }
             }
             else if (num == 1)
@@ -74,9 +75,10 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log(i);
                     action.text = actionDB.levels[i].line[0];
-                    yield return new WaitForSeconds(3.5f);
+                    yield return new WaitForSeconds(2.5f);
                     action.text = actionDB.levels[i].line[1];
-                    break;
+                    yield return new WaitForSeconds(2.5f);
+                    InitGame();
                 }
             }
             else if (num == 2)
@@ -86,9 +88,10 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log(i);
                     action.text = actionDB.levels[i].line[0];
-                    yield return new WaitForSeconds(3.5f);
+                    yield return new WaitForSeconds(2.5f);
                     action.text = actionDB.levels[i].line[1];
-                    break;
+                    yield return new WaitForSeconds(2.5f);
+                    InitGame();
                 }
             }
             i--;
