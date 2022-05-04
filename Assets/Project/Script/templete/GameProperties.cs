@@ -7,10 +7,9 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "GameProperties", menuName = "GameProperties")]
 public class GameProperties : ScriptableObject
 {
+    public bool inGame;
     public int score;
-    public double yourBet;
-    public double opponentBet;
-    public double yourTip;
-    public double opponentTip;
+    public int attension;
+    public List<int> attensionLog;
     public ReactiveProperty<UIMode> uiMode;
 }

@@ -7,6 +7,6 @@ public class SceneCange : MonoBehaviour
 {
     void onclick()
     {
-        SceneManager.LoadScene("Scene01", LoadSceneMode.Single);
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 }

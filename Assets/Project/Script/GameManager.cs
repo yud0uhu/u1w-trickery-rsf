@@ -22,16 +22,31 @@ public class GameManager : MonoBehaviour
     public Sprite auto_0;
     public Sprite auto_1;
 
+    public TimeManager timer;
+
     void Start()
     {
         InitGame();
     }
 
+    IEnumerator LogServer()
+    {
+        while (properties.inGame==true) {
+            properties.attensionLog.Add(properties.attension);
+            Debug.Log(properties.attensionLog);
+            yield return new WaitForSeconds(1.0f);
+        }
+        yield return null;
+    }
+
 
     void InitGame()
     {
+        StartCoroutine("LogServer");
+        properties.inGame = true;
         properties.uiMode.Value = UIMode.Main;
         List<int> numbers = new List<int>();
+        
         ransu = new List<int>();
         for (int i = 0; i <= 4; i++)
         {
@@ -59,31 +74,36 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Action(int num)
     {
-        Debug.Log(ransu[0]);
-        properties.uiMode.Value = UIMode.Action;
-
-        for (int element = 0; element < 2; element++)
+        if (timer.effect <= 1)
         {
-            auto.sprite = auto_0;
-            wordListIndex = ransu[num];
-            int wordCount = 0;
-            action.text = "";
-            while (actionDB.levels[wordListIndex].line[element].Length > wordCount)
+            Debug.Log(ransu[0]);
+            properties.uiMode.Value = UIMode.Action;
+
+            for (int element = 0; element < 2; element++)
             {
-                action.text += actionDB.levels[wordListIndex].line[element][wordCount];
-                wordCount++;
-                yield return new WaitForSeconds(wordSpeed);
+                auto.sprite = auto_0;
+                wordListIndex = ransu[num];
+                int wordCount = 0;
+                action.text = "";
+                while (actionDB.levels[wordListIndex].line[element].Length > wordCount)
+                {
+                    action.text += actionDB.levels[wordListIndex].line[element][wordCount];
+                    wordCount++;
+                    yield return new WaitForSeconds(wordSpeed);
 
+                }
+                auto.sprite = auto_1;
+                yield return new WaitForSeconds(2.5f);
             }
-            auto.sprite = auto_1;
-            yield return new WaitForSeconds(2.5f);
+            InitGame();
+        } else
+        {
+            ResultLoad();
         }
-
-        InitGame();
     }
 
-    public void GameOver()
+    public void ResultLoad()
     {
-        
+        Debug.Log("Reslt‚¾‚æ");
     }
 }
