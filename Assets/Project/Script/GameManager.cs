@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameProperties properties;
     [SerializeField] ActionDB actionDB;
     [SerializeField] Text first;
-    [SerializeField] Text seccond;
+    [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
 
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         first.text = actionDB.levels[ransu[0]].actionName;
-        seccond.text = actionDB.levels[ransu[1]].actionName;
+        second.text = actionDB.levels[ransu[1]].actionName;
         third.text = actionDB.levels[ransu[2]].actionName;
         
 
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             else if (num == 1)
             {
 
-                if (seccond.text == actionDB.levels[i].actionName)
+                if (second.text == actionDB.levels[i].actionName)
                 {
                     Debug.Log(i);
                     action.text = actionDB.levels[i].line[0];

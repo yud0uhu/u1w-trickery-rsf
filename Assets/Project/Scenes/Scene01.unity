@@ -330,7 +330,7 @@ MonoBehaviour:
   properties: {fileID: 11400000, guid: 015cf51adbda28c4eb12f3311f716b27, type: 2}
   actionDB: {fileID: 11400000, guid: caf85a67839d0174b8e7d58fcb2a9c75, type: 2}
   first: {fileID: 15680241}
-  seccond: {fileID: 2097972935}
+  second: {fileID: 2097972935}
   third: {fileID: 1617803654}
   action: {fileID: 1750914475}
 --- !u!1 &305338406
@@ -1267,7 +1267,7 @@ GameObject:
   - component: {fileID: 905488381}
   - component: {fileID: 905488380}
   m_Layer: 5
-  m_Name: Seccond
+  m_Name: Second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
