@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] float wordSpeed;
     int wordListIndex = 0;
 
+    [SerializeField]
+    SpriteRenderer auto;
+    public Sprite auto_0;
+    public Sprite auto_1;
+
     void Start()
     {
         InitGame();
@@ -59,6 +64,7 @@ public class GameManager : MonoBehaviour
 
         for (int element = 0; element < 2; element++)
         {
+            auto.sprite = auto_0;
             wordListIndex = ransu[num];
             int wordCount = 0;
             action.text = "";
@@ -67,7 +73,9 @@ public class GameManager : MonoBehaviour
                 action.text += actionDB.levels[wordListIndex].line[element][wordCount];
                 wordCount++;
                 yield return new WaitForSeconds(wordSpeed);
+
             }
+            auto.sprite = auto_1;
             yield return new WaitForSeconds(2.5f);
         }
 
