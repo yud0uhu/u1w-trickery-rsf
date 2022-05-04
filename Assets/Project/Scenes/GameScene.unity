@@ -376,7 +376,6 @@ GameObject:
   m_Component:
   - component: {fileID: 178692652}
   - component: {fileID: 178692653}
-  - component: {fileID: 178692654}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -421,19 +420,7 @@ MonoBehaviour:
   auto: {fileID: 791423130}
   auto_0: {fileID: 8043091600683127539, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
   auto_1: {fileID: 919690070564659940, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
---- !u!114 &178692654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178692651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177b3c7fcdcd2a0499311f8d987b8a67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer_fill: {fileID: 702954488}
+  timer: {fileID: 1458552577}
 --- !u!1 &305338406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,8 +1305,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 1045983553}
-  m_RootOrder: 11
+  m_Father: {fileID: 1458552578}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1882,8 +1869,6 @@ Transform:
   - {fileID: 1026385423}
   - {fileID: 575201126}
   - {fileID: 51274511}
-  - {fileID: 1950793410}
-  - {fileID: 702954489}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2411,6 +2396,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399849994}
   m_CullTransparentMesh: 1
+--- !u!1 &1458552576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458552578}
+  - component: {fileID: 1458552577}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1458552577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458552576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177b3c7fcdcd2a0499311f8d987b8a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_fill: {fileID: 702954490}
+  effect: 0
+--- !u!4 &1458552578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458552576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1950793410}
+  - {fileID: 702954489}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521120677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,8 +3047,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -168.71997, y: -152.68}
-  m_SizeDelta: {x: 2483.76, y: 310.08}
+  m_AnchoredPosition: {x: -162.70001, y: -156.84}
+  m_SizeDelta: {x: 2403.55, y: 254.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750914475
 MonoBehaviour:
@@ -3040,12 +3072,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08acd62318ced7a44a4e019b72a14902, type: 3}
-    m_FontSize: 200
+    m_FontSize: 220
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3145,8 +3177,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 14, y: 14, z: 1}
   m_Children: []
-  m_Father: {fileID: 1045983553}
-  m_RootOrder: 10
+  m_Father: {fileID: 1458552578}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1950793411
 SpriteRenderer:
