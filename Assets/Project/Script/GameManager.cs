@@ -45,22 +45,51 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void onClickAction()
+    public void onClickAction(int num)
     {
-        StartCoroutine("Action");
+        StartCoroutine(Action(num));
     }
 
-    IEnumerator Action()
+    IEnumerator Action(int num)
     {
         properties.uiMode.Value = UIMode.Action;
         int i = 4;
-        while (i > 0)
+        while (i >= 0)
         {
-            if (first.text == actionDB.levels[i].actionName || seccond.text == actionDB.levels[i].actionName || third.text == actionDB.levels[i].actionName)
+            if (num == 0)
             {
-                action.text = actionDB.levels[i].line[0];
-                yield return new WaitForSeconds(3.5f);
-                action.text = actionDB.levels[i].line[1];
+                if (first.text == actionDB.levels[i].actionName)
+                {
+                    Debug.Log(i);
+                    action.text = actionDB.levels[i].line[0];
+                    yield return new WaitForSeconds(3.5f);
+                    action.text = actionDB.levels[i].line[1];
+                    break;
+                }
+            }
+            else if (num == 1)
+            {
+
+                if (seccond.text == actionDB.levels[i].actionName)
+                {
+                    Debug.Log(i);
+                    action.text = actionDB.levels[i].line[0];
+                    yield return new WaitForSeconds(3.5f);
+                    action.text = actionDB.levels[i].line[1];
+                    break;
+                }
+            }
+            else if (num == 2)
+            {
+
+                if (third.text == actionDB.levels[i].actionName)
+                {
+                    Debug.Log(i);
+                    action.text = actionDB.levels[i].line[0];
+                    yield return new WaitForSeconds(3.5f);
+                    action.text = actionDB.levels[i].line[1];
+                    break;
+                }
             }
             i--;
         }
