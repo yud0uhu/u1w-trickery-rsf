@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
+
     public List<int> ransu;
 
     [SerializeField] float wordSpeed;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public TimeManager timer;
 
+    public GameObject rsf;
     void Start()
     {
         InitGame();
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         while (properties.inGame==true) {
             properties.attensionLog.Add(properties.attension);
-            Debug.Log(properties.attensionLog);
+            //Debug.Log(properties.attensionLog);
             yield return new WaitForSeconds(1.0f);
         }
         yield return null;
@@ -42,11 +44,13 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
+        rsf.SetActive(false);
+        properties.attensionLog.Clear();
         StartCoroutine("LogServer");
         properties.inGame = true;
         properties.uiMode.Value = UIMode.Main;
         List<int> numbers = new List<int>();
-        
+
         ransu = new List<int>();
         for (int i = 0; i <= 4; i++)
         {
@@ -79,6 +83,9 @@ public class GameManager : MonoBehaviour
             Debug.Log(ransu[0]);
             properties.uiMode.Value = UIMode.Action;
 
+            // Effect‚Í³•‰‚Ì’l‚ð“®‚­
+            properties.attension += actionDB.levels[ransu[num]].Effect;
+
             for (int element = 0; element < 2; element++)
             {
                 auto.sprite = auto_0;
@@ -90,7 +97,6 @@ public class GameManager : MonoBehaviour
                     action.text += actionDB.levels[wordListIndex].line[element][wordCount];
                     wordCount++;
                     yield return new WaitForSeconds(wordSpeed);
-
                 }
                 auto.sprite = auto_1;
                 yield return new WaitForSeconds(2.5f);
@@ -98,6 +104,8 @@ public class GameManager : MonoBehaviour
             InitGame();
         } else
         {
+            Debug.Log("Œx‰ú“x");
+            Debug.Log(properties.attension);
             ResultLoad();
         }
     }
