@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class GameProperties : ScriptableObject
 {
     public bool inGame;
+    public bool firstPlay;
+    public bool firstWin;
     public int score;
     public int attension;
     public List<int> attensionLog;

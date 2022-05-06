@@ -1,4 +1,4 @@
 public enum UIMode
 {
-    Main,GamePlay,Action
+    Main,GamePlay,Action,Tutolial
 }
