@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
         if (properties.firstPlay == true)
         {
             properties.uiMode.Value = UIMode.Tutolial;
-            Debug.Log("びっくりするほどユートピア");
             yield return new WaitForSeconds(2.0f);
         }
     }
@@ -122,8 +121,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(timer.effect);
         } else 
         {
-            Debug.Log("警戒度");
-            Debug.Log(properties.attension);
+            // Debug.Log(properties.attension);
             load.LoadResult();
         }
     }
