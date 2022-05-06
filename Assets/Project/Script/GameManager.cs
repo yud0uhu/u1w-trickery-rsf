@@ -50,10 +50,13 @@ public class GameManager : MonoBehaviour
             properties.uiMode.Value = UIMode.Tutolial;
             Debug.Log("びっくりするほどユートピア");
             yield return new WaitForSeconds(2.0f);
-            properties.firstPlay = false;
         }
     }
 
+    private void Update()
+    {
+        StartCoroutine("LogServer");
+    }
 
     void InitGame()
     {
@@ -61,8 +64,8 @@ public class GameManager : MonoBehaviour
         rsf.SetActive(false);
         properties.attensionLog.Clear();
         StartCoroutine("firstPlay");
+        properties.firstPlay = false;
         properties.uiMode.Value = UIMode.Main;
-        StartCoroutine("LogServer");
 
         List<int> numbers = new List<int>();
         ransu = new List<int>();
