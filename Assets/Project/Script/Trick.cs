@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Trick : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameProperties properties;
+    public GameObject rsf;
+    public void trick()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        properties.uiMode.Value = UIMode.Main;
+        if (properties.attension >= 30)
+        {
+            rsf.SetActive(true);
+            Debug.Log("成功！！！！！！！");
+            
+        } else
+        {
+            rsf.SetActive(true);
+            Debug.Log("失敗！！！！！！！");
+        }
     }
 }

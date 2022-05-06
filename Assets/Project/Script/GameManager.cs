@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
+
     public List<int> ransu;
 
     [SerializeField] float wordSpeed;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public TimeManager timer;
 
+    public GameObject rsf;
     void Start()
     {
         InitGame();
@@ -33,20 +35,35 @@ public class GameManager : MonoBehaviour
     {
         while (properties.inGame==true) {
             properties.attensionLog.Add(properties.attension);
-            Debug.Log(properties.attensionLog);
+            //Debug.Log(properties.attensionLog);
             yield return new WaitForSeconds(1.0f);
         }
         yield return null;
     }
 
+    IEnumerator firstPlay()
+    {
+        if (properties.firstPlay == true)
+        {
+            properties.uiMode.Value = UIMode.Tutolial;
+            Debug.Log("びっくりするほどユートピア");
+            yield return new WaitForSeconds(2.0f);
+            properties.firstPlay = false;
+            properties.uiMode.Value = UIMode.Main;
+        }
+    }
+
 
     void InitGame()
     {
-        StartCoroutine("LogServer");
+        properties.firstPlay = true;
         properties.inGame = true;
-        properties.uiMode.Value = UIMode.Main;
+        rsf.SetActive(false);
+        properties.attensionLog.Clear();
+        StartCoroutine("firstPlay");
+        StartCoroutine("LogServer");
+
         List<int> numbers = new List<int>();
-        
         ransu = new List<int>();
         for (int i = 0; i <= 4; i++)
         {
@@ -79,6 +96,9 @@ public class GameManager : MonoBehaviour
             Debug.Log(ransu[0]);
             properties.uiMode.Value = UIMode.Action;
 
+            // Effectは正負の値を動く
+            properties.attension += actionDB.levels[ransu[num]].Effect;
+
             for (int element = 0; element < 2; element++)
             {
                 auto.sprite = auto_0;
@@ -90,7 +110,6 @@ public class GameManager : MonoBehaviour
                     action.text += actionDB.levels[wordListIndex].line[element][wordCount];
                     wordCount++;
                     yield return new WaitForSeconds(wordSpeed);
-
                 }
                 auto.sprite = auto_1;
                 yield return new WaitForSeconds(2.5f);
@@ -98,6 +117,8 @@ public class GameManager : MonoBehaviour
             InitGame();
         } else
         {
+            Debug.Log("警戒度");
+            Debug.Log(properties.attension);
             ResultLoad();
         }
     }
