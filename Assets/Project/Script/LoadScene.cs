@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneCange : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
-    void onclick()
+    public void LoadGame()
     {
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
+
+    public void LoadResult()
+    {
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+    }
+
 }

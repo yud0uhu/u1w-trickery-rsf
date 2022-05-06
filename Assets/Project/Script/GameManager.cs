@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
+    public LoadScene load;
 
     public List<int> ransu;
 
@@ -119,12 +120,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Œx‰ú“x");
             Debug.Log(properties.attension);
-            ResultLoad();
+            load.LoadResult();
         }
-    }
-
-    public void ResultLoad()
-    {
-        Debug.Log("Reslt‚¾‚æ");
     }
 }

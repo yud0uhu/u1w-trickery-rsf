@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 611735818}
   - component: {fileID: 611735817}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,8 +355,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 671229708}
-        m_TargetAssemblyTypeName: SceneChange, Project
-        m_MethodName: GameStart
+        m_TargetAssemblyTypeName: LoadScene, Project
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -524,6 +524,8 @@ MonoBehaviour:
   auto: {fileID: 0}
   auto_0: {fileID: 8043091600683127539, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
   auto_1: {fileID: 919690070564659940, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
+  timer: {fileID: 0}
+  rsf: {fileID: 0}
 --- !u!4 &671229707
 Transform:
   m_ObjectHideFlags: 0
@@ -547,7 +549,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 671229705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0616294124c3c459d33bc89caa9940, type: 3}
+  m_Script: {fileID: 11500000, guid: a80921ee4e31adf4b9b06863331b0669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &739638123
