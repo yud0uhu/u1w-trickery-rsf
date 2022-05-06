@@ -417,7 +417,7 @@ MonoBehaviour:
   second: {fileID: 2097972935}
   third: {fileID: 1617803654}
   action: {fileID: 328922011}
-  load: {fileID: 0}
+  load: {fileID: 178692654}
   ransu: 
   wordSpeed: 0
   auto: {fileID: 1380061700}
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178692651}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f29aecfabda05ec4e962d002af7350df, type: 3}
   m_Name: 
@@ -1994,19 +1994,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1006808544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 178692653}
-        m_TargetAssemblyTypeName: GameManager, Project
-        m_MethodName: onClickAction
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1006808544
 MonoBehaviour:
   m_ObjectHideFlags: 0

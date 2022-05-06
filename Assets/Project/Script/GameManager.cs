@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject rsf;
     void Start()
     {
+        properties.firstPlay = true;
         InitGame();
     }
 
@@ -50,18 +51,17 @@ public class GameManager : MonoBehaviour
             Debug.Log("びっくりするほどユートピア");
             yield return new WaitForSeconds(2.0f);
             properties.firstPlay = false;
-            properties.uiMode.Value = UIMode.Main;
         }
     }
 
 
     void InitGame()
     {
-        properties.firstPlay = true;
         properties.inGame = true;
         rsf.SetActive(false);
         properties.attensionLog.Clear();
         StartCoroutine("firstPlay");
+        properties.uiMode.Value = UIMode.Main;
         StartCoroutine("LogServer");
 
         List<int> numbers = new List<int>();
@@ -116,7 +116,8 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(2.5f);
             }
             InitGame();
-        } else
+            Debug.Log(timer.effect);
+        } else 
         {
             Debug.Log("警戒度");
             Debug.Log(properties.attension);

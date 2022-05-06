@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Trick : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Trick : MonoBehaviour
         {
             rsf.SetActive(true);
             Debug.Log("失敗！！！！！！！");
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            load.LoadResult();
         }
     }
 }
