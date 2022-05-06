@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eac4798a22c9a4682d044ed940bad9, type: 3}
   m_Name: GameProperties
   m_EditorClassIdentifier: 
+  inGame: 0
   score: 0
-  yourBet: 20
-  opponentBet: 50
-  yourTip: 20000
-  opponentTip: 20000
+  attension: 0
+  attensionLog: 6400000028000000
   uiMode:
     value: 0
