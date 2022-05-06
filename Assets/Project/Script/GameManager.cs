@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         properties.firstPlay = true;
+        properties.attension = 0;
         InitGame();
     }
 
@@ -37,7 +38,8 @@ public class GameManager : MonoBehaviour
     {
         while (properties.inGame==true) {
             properties.attensionLog.Add(properties.attension);
-            //Debug.Log(properties.attensionLog);
+            Debug.Log(properties.attension);
+            Debug.Log(properties.attensionLog[1]);
             yield return new WaitForSeconds(1.0f);
         }
         yield return null;
@@ -121,7 +123,6 @@ public class GameManager : MonoBehaviour
             Debug.Log(timer.effect);
         } else 
         {
-            // Debug.Log(properties.attension);
             load.LoadResult();
         }
     }
