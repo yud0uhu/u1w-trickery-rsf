@@ -41,16 +41,29 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator firstPlay()
+    {
+        if (properties.firstPlay == true)
+        {
+            properties.uiMode.Value = UIMode.Tutolial;
+            Debug.Log("びっくりするほどユートピア");
+            yield return new WaitForSeconds(2.0f);
+            properties.firstPlay = false;
+            properties.uiMode.Value = UIMode.Main;
+        }
+    }
+
 
     void InitGame()
     {
+        properties.firstPlay = true;
+        properties.inGame = true;
         rsf.SetActive(false);
         properties.attensionLog.Clear();
+        StartCoroutine("firstPlay");
         StartCoroutine("LogServer");
-        properties.inGame = true;
-        properties.uiMode.Value = UIMode.Main;
-        List<int> numbers = new List<int>();
 
+        List<int> numbers = new List<int>();
         ransu = new List<int>();
         for (int i = 0; i <= 4; i++)
         {
