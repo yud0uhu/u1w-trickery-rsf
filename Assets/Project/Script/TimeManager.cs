@@ -24,13 +24,15 @@ public class TimeManager : MonoBehaviour
 
     public void Update()
     {
-        if (effect >= 0)
+        if (properties.timerSwitch == true)
         {
-            countup += Time.deltaTime;
-            effect = countup / 60;
-            timer_fill.fillAmount = effect;
-            properties.restTime = countup;
+            if (effect >= 0)
+            {
+                countup += Time.deltaTime;
+                effect = countup / 60;
+                timer_fill.fillAmount = effect;
+                properties.restTime = countup;
+            }
         }
     }
-
 }

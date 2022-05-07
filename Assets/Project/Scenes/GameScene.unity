@@ -417,7 +417,7 @@ MonoBehaviour:
   second: {fileID: 2097972935}
   third: {fileID: 1617803654}
   action: {fileID: 328922011}
-  load: {fileID: 178692654}
+  tutorial: {fileID: 250514609}
   ransu: 
   wordSpeed: 0
   auto: {fileID: 1380061700}
@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 250514610}
   - component: {fileID: 250514607}
   - component: {fileID: 250514608}
+  - component: {fileID: 250514609}
   m_Layer: 5
   m_Name: TUTORIAL
   m_TagString: Untagged
@@ -533,6 +534,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameProperties: {fileID: 11400000, guid: 015cf51adbda28c4eb12f3311f716b27, type: 2}
   myUIelementsMode: 3
+--- !u!114 &250514609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250514605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797eafcc229a76a45af5a789299c8f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties: {fileID: 11400000, guid: 015cf51adbda28c4eb12f3311f716b27, type: 2}
+  action: {fileID: 1270028205}
+  messageList:
+  - "\u30B9\u30EA\u30EB\u4F9D\u5B58\u75C7\u306E\u3042\u306A\u305F\u306F\u3001\u8896\u306B\u4ED5\u8FBC\u3093\u3060\u30C8\u30E9\u30F3\u30D7\u3092\u4F7F\u3063\u3066\u300C\u30ED\u30A4\u30E4\u30EB\u30B9\u30C8\u30EC\u30FC\u30C8\u30D5\u30E9\u30C3\u30B7\u30E5\u300D\u3092\u6C7A\u3081\u305F\u3044\u3068\u8003\u3048\u3066\u3044\u308B\u3002"
+  - "\u4F1A\u8A71\u3084\u884C\u52D5\u3067\u76F8\u624B\u3068\u30C7\u30A3\u30FC\u30E9\u30FC\u306E\u6CE8\u610F\u3092\u5F15\u3044\u3066\u3001\u512A\u96C5\u306B\u30A4\u30AB\u30B5\u30DE\u3092\u6210\u529F\u3055\u305B\u3088\u3046\u3002"
+  - "\u30D7\u30EC\u30A4\u30E4\u30FC\uFF1A\uFF08\u307B\u3089\u3001\u76EE\u306E\u524D\u306B\u7D76\u597D\u306E\u30AB\u30E2\u304C\u3044\u308B\u3058\u3083\u306A\u3044\u304B\uFF09"
+  auto: {fileID: 1380061700}
+  auto_0: {fileID: 8043091600683127539, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
+  auto_1: {fileID: 919690070564659940, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
+  wordSpeed: 0
 --- !u!222 &250514610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2378,7 +2401,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3053\u308C\u306F\u30C1\u30E5\u30FC\u30C8\u30EA\u30A2\u30EB\u3067\u3059"
+  m_Text: 
 --- !u!222 &1270028206
 CanvasRenderer:
   m_ObjectHideFlags: 0
