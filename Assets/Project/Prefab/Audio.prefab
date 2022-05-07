@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3195352347922842077}
   - component: {fileID: 3195352347922842078}
   - component: {fileID: 3184432777876191685}
+  - component: {fileID: 7503063700662879606}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Audio
@@ -48,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 3195352347922842077}
   SE: {fileID: 3195352347922842078}
+  musicUnity1: {fileID: 3184432777876191685}
+  musicUnity2: {fileID: 7503063700662879606}
 --- !u!82 &3195352347922842077
 AudioSource:
   m_ObjectHideFlags: 0
@@ -286,14 +289,47 @@ MonoBehaviour:
       Beat: 0
       Unit: 0
     Transition:
-      UseFadeOut: 0
-      FadeOutTime: 0
+      UseFadeOut: 1
+      FadeOutTime: 0.3
       FadeOutOffset: 0
       UseFadeIn: 0
       FadeInTime: 0
       FadeInOffset: 0
     TransitionType: 0
     TransitionDestinationIndex: 0
+  Modes:
+  - Name: Mode
+    TotalVolume: 1
+    LayerVolumes:
+    - 1
+  ModeTransitionParam:
+    FadeTime: 0
+    FadeOffset: 0
+    TimeUnitType: 0
+    SyncType: 0
+    SyncFactor: 1
+  SectionTransitionOverrides: []
+  ModeTransitionOverrides: []
+  NumTracks: 1
+  SeekBar: 0
+  PreviewSectionIndex: 0
+  PreviewModeIndex: 0
+--- !u!114 &7503063700662879606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195352347922842072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d8f4eb621e1284f8e8eba045445d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnStart: 0
+  Volume: 1
+  OutputMixerGroup: {fileID: -2337494742348798263, guid: 62e5677c4629b7e4f9955afbf3ff60ae, type: 2}
+  Sections:
   - Name: Section
     Clips:
     - {fileID: 8300000, guid: d37ca5de1f504094b8df39edbe1dace8, type: 3}
@@ -324,12 +360,12 @@ MonoBehaviour:
       Beat: 0
       Unit: 0
     Transition:
-      UseFadeOut: 0
-      FadeOutTime: 0
+      UseFadeOut: 1
+      FadeOutTime: 0.1
       FadeOutOffset: 0
-      UseFadeIn: 0
-      FadeInTime: 0
-      FadeInOffset: 0
+      UseFadeIn: 1
+      FadeInTime: 0.3
+      FadeInOffset: 1
     TransitionType: 0
     TransitionDestinationIndex: 0
   Modes:
