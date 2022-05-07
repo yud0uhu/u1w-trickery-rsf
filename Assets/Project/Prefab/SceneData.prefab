@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d8a4279a24bd144b3937b8774d610d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneBGM: {fileID: 0}
+  SceneBGM: {fileID: 8300000, guid: 555c3346ec5e8bf468e4b1ab99c97fac, type: 3}
