@@ -20,8 +20,8 @@ public class Trick : MonoBehaviour
     [SerializeField] float wordSpeed;
     GameObject Audio;
     AudioManager audioManager;
-    [SerializeField] AudioClip trickSuccess;
-    [SerializeField] AudioClip trickFailed;
+    [SerializeField] AudioClip trickSuccessSE;
+    [SerializeField] AudioClip trickFailedSE;
 
     private void Start()
     {
@@ -48,14 +48,14 @@ public class Trick : MonoBehaviour
 
     IEnumerator SucsessTrick()
     {
-        AudioManager.SE_Play(trickSuccess);
+        AudioManager.SE_Play(trickSuccessSE);
         yield return new WaitForSeconds(2.5f);
         load.LoadResult();
     }
 
     IEnumerator FailedTrick()
     {
-        AudioManager.SE_Play(trickFailed);
+        AudioManager.SE_Play(trickFailedSE);
         if (properties.isSuccessTrick == false)
         {
             attention.sprite = attention_img;
