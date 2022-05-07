@@ -35,7 +35,7 @@ public class Trick : MonoBehaviour
         {
             properties.isSuccessTrick = true;
             properties.uiMode.Value = UIMode.Trick;
-            AudioManager.VolumeChange(0.5f);
+            AudioManager.VolumeChangeMoment(0.5f);
             audioManager.TrickBGM();
             Debug.Log("成功！！！！！！！");
             StartCoroutine("SucsessTrick");

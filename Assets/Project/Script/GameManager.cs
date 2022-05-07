@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
+        properties.isSuccessTrick = false;
         properties.attension = 100;
         properties.inGame = true;
         properties.timerSwitch = true;

@@ -87,4 +87,8 @@ public class AudioManager : MonoBehaviour
     {
         DOTween.To(() => BGM_audio.volume, x => BGM_audio.volume = x, volume, 2f);
     }
+    static public void VolumeChangeMoment(float volume)
+    {
+        BGM_audio.volume = volume;
+    }
 }

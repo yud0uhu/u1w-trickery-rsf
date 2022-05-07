@@ -13,7 +13,8 @@ public class GameSceneAudioEffect : MonoBehaviour
             AudioManager.PitchChange(1.1f);
             pitchup = true;
         }
-        if (properties.inGame == true)
+        
+        if (properties.inGame == true&&properties.isSuccessTrick == false)
         {
             float vol = (float)properties.attension / 200;
             if (vol < 0.1f) vol = 0.1f;
