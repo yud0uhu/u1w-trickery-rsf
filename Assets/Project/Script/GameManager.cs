@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Sprite auto_1;
 
     public TimeManager timer;
+    [SerializeField] AudioClip buttonSE;
 
     void Start()
     {
@@ -117,6 +118,7 @@ public class GameManager : MonoBehaviour
 
     public void onClickAction(int num)
     {
+        AudioManager.SE_Play(buttonSE);
         StartCoroutine(Action(num));
     }
 
