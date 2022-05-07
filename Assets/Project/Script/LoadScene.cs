@@ -9,7 +9,7 @@ public class LoadScene : MonoBehaviour
     [SerializeField] AudioClip resultSE;
     public void LoadGame()
     {
-        AudioManager.SE_Play(bottunSE);
+        AudioManager.SE_Play(buttonSE);
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
         AudioManager.SE_Play(buttonSE);
     }

@@ -376,7 +376,6 @@ GameObject:
   m_Component:
   - component: {fileID: 178692652}
   - component: {fileID: 178692653}
-  - component: {fileID: 178692655}
   - component: {fileID: 178692654}
   m_Layer: 0
   m_Name: GameManager
@@ -425,7 +424,7 @@ MonoBehaviour:
   auto_0: {fileID: 8043091600683127539, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
   auto_1: {fileID: 919690070564659940, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
   timer: {fileID: 1458552577}
-  buttonSE: {fileID: 0}
+  buttonSE: {fileID: 8300000, guid: 6a55e8229f72c6c4680510e5f0bd6508, type: 3}
 --- !u!114 &178692654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,20 +439,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSE: {fileID: 8300000, guid: 6a55e8229f72c6c4680510e5f0bd6508, type: 3}
   resultSE: {fileID: 8300000, guid: 986e7c020c3762c4dad7bca697838359, type: 3}
---- !u!114 &178692655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178692651}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29aecfabda05ec4e962d002af7350df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineChart: {fileID: 0}
-  properties: {fileID: 11400000, guid: 015cf51adbda28c4eb12f3311f716b27, type: 2}
 --- !u!1 &250514605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1340,6 @@ GameObject:
   - component: {fileID: 633579195}
   - component: {fileID: 633579194}
   - component: {fileID: 633579197}
-  - component: {fileID: 633579198}
   m_Layer: 5
   m_Name: TRICK
   m_TagString: Untagged
@@ -1503,22 +1487,6 @@ MonoBehaviour:
   wordSpeed: 0
   trickSuccessSE: {fileID: 8300000, guid: 4b6173ae963a5dd418ebc44c63c524f5, type: 3}
   trickFailedSE: {fileID: 8300000, guid: e436481374e95bb4181b2fc7b24dc119, type: 3}
---- !u!114 &633579198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633579192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dfc22d2b10fbc6478e53a171fcf6470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGM: {fileID: 0}
-  SE: {fileID: 0}
-  trick: {fileID: 8300000, guid: d37ca5de1f504094b8df39edbe1dace8, type: 3}
-  play: {fileID: 0}
 --- !u!1 &682017698
 GameObject:
   m_ObjectHideFlags: 0
