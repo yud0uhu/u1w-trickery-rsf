@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     static AudioSource BGM_audio = null;
     static AudioSource SE_audio = null;
     static Sequence seq;
+    [SerializeField] MusicUnity musicUnity1;
+    [SerializeField] MusicUnity musicUnity2;
 
     void Awake()
     {
@@ -55,6 +57,19 @@ public class AudioManager : MonoBehaviour
 
     public void TrickBGM()
     {
-        Debug.Log("aaa");
+        //musicUnity.SetVerticalMix("Section2");
+        //Music.Play("Section2");
+        musicUnity1.Stop();
+        musicUnity2.Play();
+        //musicUnity1.SetHorizontalSequence("Section2");
+        musicUnity2.Seek(new Timing(7, 1, 0));
+    }
+    public void returnBGM()
+    {
+        //musicUnity.SetVerticalMix("Section2");
+        //Music.Play("Section2");
+        musicUnity2.Stop();
+        musicUnity1.Play();
+        //musicUnity1.SetHorizontalSequence("Section2");
     }
 }
