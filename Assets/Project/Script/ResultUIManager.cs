@@ -14,6 +14,7 @@ public class ResultUIManager : MonoBehaviour
     [SerializeField] List<GameObject> winobj = new List<GameObject>();
     AudioManager audioManager;
     [SerializeField] GameObject nextbutton;
+    [SerializeField] AudioClip button;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,11 +51,13 @@ public class ResultUIManager : MonoBehaviour
     }
     public void OnClickNext()
     {
+        AudioManager.SE_Play(button);
         audioManager.returnBGM();
         SceneManager.LoadScene("GameScene");
     }
     public void OnclickEnd()
     {
+        AudioManager.SE_Play(button);
         audioManager.returnBGM();
         SceneManager.LoadScene("Title");
     }

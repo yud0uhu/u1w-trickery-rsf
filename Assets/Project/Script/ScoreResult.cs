@@ -7,15 +7,22 @@ public class ScoreResult : MonoBehaviour
 {
     [SerializeField] Text text;
     [SerializeField] GameProperties properties;
-    // Start is called before the first frame update
+    //[SerializeField] AudioClip audioClip;
+    [SerializeField] AudioSource audioSource;
     void Start()
     {
-        text.text = "Score\n"+ ((int)((60-(properties.restTime) + 1) * 1000)).ToString();
-    }
+        var tmp = (int)((60 - (properties.restTime) + 1) * 1000);
+        if (tmp <= 0)
+        {
+            tmp = 0;
+        }
+        if (properties.isSuccessTrick == true)
+        {
+            //AudioManager.SE_Play(audioClip);
+            audioSource.Play();
+            tmp = tmp * 20;
+        }
+        text.text = "Score\n"+ tmp.ToString();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

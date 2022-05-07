@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    [SerializeField] AudioClip bottunSE;
     public void LoadGame()
     {
+        AudioManager.SE_Play(bottunSE);
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 

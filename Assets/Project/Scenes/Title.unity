@@ -526,6 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80921ee4e31adf4b9b06863331b0669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bottunSE: {fileID: 8300000, guid: 6a55e8229f72c6c4680510e5f0bd6508, type: 3}
 --- !u!1 &739638123
 GameObject:
   m_ObjectHideFlags: 0
