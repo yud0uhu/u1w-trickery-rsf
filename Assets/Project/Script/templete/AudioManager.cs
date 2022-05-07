@@ -59,6 +59,8 @@ public class AudioManager : MonoBehaviour
 
     public void TrickBGM()
     {
+        PitchChange(1.0f);
+        VolumeChange(0.5f);
         BGM_Play(trick);
         BGM_audio.time = 12f;
         ////musicUnity.SetVerticalMix("Section2");
@@ -76,5 +78,13 @@ public class AudioManager : MonoBehaviour
         //musicUnity2.Stop();
         //musicUnity1.Play();
         ////musicUnity1.SetHorizontalSequence("Section2");
+    }
+    static public void PitchChange(float pitch)
+    {
+        DOTween.To(() => BGM_audio.pitch, x => BGM_audio.pitch = x, pitch, 2f);
+    }
+    static public void VolumeChange(float volume)
+    {
+        DOTween.To(() => BGM_audio.volume, x => BGM_audio.volume = x, volume, 2f);
     }
 }
