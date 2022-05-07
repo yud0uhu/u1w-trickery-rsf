@@ -13,6 +13,7 @@ public class GameProperties : ScriptableObject
     public bool isSuccessTrick;
     public int score;
     public double restTime;
+    public bool timerSwitch;
     public int attension;
     public List<int> attensionLog;
     public ReactiveProperty<UIMode> uiMode;
