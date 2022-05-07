@@ -15,6 +15,8 @@ public class ResultUIManager : MonoBehaviour
     AudioManager audioManager;
     [SerializeField] GameObject nextbutton;
     [SerializeField] AudioClip button;
+    [SerializeField] GameObject card;
+    [SerializeField] GameObject rsf;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +24,15 @@ public class ResultUIManager : MonoBehaviour
         //ƒ^ƒbƒv‚ÅŽŸ‚Ö‚Æ‚©ŽÀ‘•‚·‚é
         if (gameProperties.isSuccessTrick == true)
         {
-            clear.text = "Clear!!";
+            //clear.text = "Clear!!";
+            clear.text = "";
+            clear.DOText("Clear!!", 1f);
         }
         else
         {
-            clear.text = "GameOver";
+            clear.text = "";
+            clear.DOText("GameOver", 1f);
+            //clear.text = "GameOver";
         }
         
         for (int i = 0; i < winobj.Count; i++)
@@ -34,6 +40,9 @@ public class ResultUIManager : MonoBehaviour
             winobj[i].SetActive(gameProperties.isSuccessTrick);
         }
         //score.text = ((gameProperties.restTime + 1) * 1000).ToString();
+
+        DOTween.To(() => card.transform.position, x => card.transform.position = x, new Vector3(0,0,0), 1f);
+
     }
 
     // Update is called once per frame
@@ -53,10 +62,12 @@ public class ResultUIManager : MonoBehaviour
     {
         AudioManager.SE_Play(button);
         audioManager.returnBGM();
+        if (gameProperties.EnemyLevel <= 3) gameProperties.EnemyLevel++;
         SceneManager.LoadScene("GameScene");
     }
     public void OnclickEnd()
     {
+        gameProperties.EnemyLevel = 0;
         AudioManager.SE_Play(button);
         audioManager.returnBGM();
         SceneManager.LoadScene("Title");
