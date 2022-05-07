@@ -10,8 +10,10 @@ public class AudioManager : MonoBehaviour
     static AudioSource BGM_audio = null;
     static AudioSource SE_audio = null;
     static Sequence seq;
-    [SerializeField] MusicUnity musicUnity1;
-    [SerializeField] MusicUnity musicUnity2;
+    [SerializeField] AudioClip trick;
+    [SerializeField] AudioClip play;
+    //[SerializeField] MusicUnity musicUnity1;
+    //[SerializeField] MusicUnity musicUnity2;
 
     void Awake()
     {
@@ -43,8 +45,8 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            var tweenFadeOut = DOTween.To(() => BGM_audio.volume, x => BGM_audio.volume = x, 0f, 1f);
-            var tweenFadeIn = DOTween.To(() => BGM_audio.volume, x => BGM_audio.volume = x, 0.5f, 1f).OnStart(() => changeBGM(clip));
+            var tweenFadeOut = DOTween.To(() => BGM_audio.volume, x => BGM_audio.volume = x, 0f, 0.2f);
+            var tweenFadeIn = DOTween.To(() => BGM_audio.volume, x => BGM_audio.volume = x, 0.5f, 0.2f).OnStart(() => changeBGM(clip));
             seq = DOTween.Sequence().Append(tweenFadeOut).Append(tweenFadeIn);
         }
         Debug.Log("AudioManager:playBGM");
@@ -57,19 +59,22 @@ public class AudioManager : MonoBehaviour
 
     public void TrickBGM()
     {
-        //musicUnity.SetVerticalMix("Section2");
-        //Music.Play("Section2");
-        musicUnity1.Stop();
-        musicUnity2.Play();
-        //musicUnity1.SetHorizontalSequence("Section2");
-        musicUnity2.Seek(new Timing(7, 1, 0));
+        BGM_Play(trick);
+        BGM_audio.time = 12f;
+        ////musicUnity.SetVerticalMix("Section2");
+        ////Music.Play("Section2");
+        //musicUnity1.Stop();
+        //musicUnity2.Play();
+        ////musicUnity1.SetHorizontalSequence("Section2");
+        //musicUnity2.Seek(new Timing(7, 1, 0));
     }
     public void returnBGM()
     {
-        //musicUnity.SetVerticalMix("Section2");
-        //Music.Play("Section2");
-        musicUnity2.Stop();
-        musicUnity1.Play();
-        //musicUnity1.SetHorizontalSequence("Section2");
+        BGM_Play(play);
+        ////musicUnity.SetVerticalMix("Section2");
+        ////Music.Play("Section2");
+        //musicUnity2.Stop();
+        //musicUnity1.Play();
+        ////musicUnity1.SetHorizontalSequence("Section2");
     }
 }
