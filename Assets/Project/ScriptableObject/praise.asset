@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae386ffcc3187f14e80fdc8b81ab1de7, type: 3}
+  m_Name: praise
+  m_EditorClassIdentifier: 
+  actionName: "\u8B19\u905C\u3059\u308B"
+  Effect: 0
+  line:
+  - "\u30D7\u30EC\u30A4\u30E4\u30FC\uFF1A\u3044\u3044\u30CD\u30AF\u30BF\u30A4\u3060\u306A"
+  - "\u76F8\u624B\uFF1A"
