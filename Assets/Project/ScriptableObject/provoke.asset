@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae386ffcc3187f14e80fdc8b81ab1de7, type: 3}
   m_Name: provoke
   m_EditorClassIdentifier: 
-  actionName: "test\u306E\u884C\u52D5"
+  actionName: "\u6311\u767A\u3059\u308B"
   Effect: 0
   line: []

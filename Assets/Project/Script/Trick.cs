@@ -22,6 +22,7 @@ public class Trick : MonoBehaviour
     AudioManager audioManager;
     [SerializeField] AudioClip trickSuccessSE;
     [SerializeField] AudioClip trickFailedSE;
+    int clearLine = 30;
 
     private void Start()
     {
@@ -30,12 +31,12 @@ public class Trick : MonoBehaviour
     }
     public void trick()
     {
+        clearLine = properties.EnemyLevel * 5;
         properties.uiMode.Value = UIMode.Main;
-        if (properties.attension < 30)
+        if (properties.attension < clearLine)
         {
             properties.isSuccessTrick = true;
             properties.uiMode.Value = UIMode.Trick;
-            AudioManager.VolumeChangeMoment(0.5f);
             audioManager.TrickBGM();
             Debug.Log("成功！！！！！！！");
             StartCoroutine("SucsessTrick");

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
+    [SerializeField] Text nameplate;
     private LoadScene load;
     public Trick trick;
     public Tutorial tutorial;
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
+        nameplate.text = properties.enemyname[properties.EnemyLevel];
         properties.isSuccessTrick = false;
         properties.attension = 100;
         properties.inGame = true;
