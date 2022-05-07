@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text third;
     [SerializeField] Text action;
     private LoadScene load;
-    private Trick trick;
+    public Trick trick;
     public Tutorial tutorial;
 
     public List<int> ransu;
@@ -30,16 +30,19 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        properties.firstPlay = true;
         InitGame();
     }
 
     IEnumerator LogServer()
     {
-        while (properties.inGame==true & properties.timerSwitch==true) {
-            properties.attensionLog.Add(properties.attension);
-            Debug.Log(properties.attension);
-            yield return new WaitForSeconds(1.0f);
+        if (properties.timerSwitch == true)
+        {
+            while (properties.inGame == true)
+            {
+                properties.attensionLog.Add(properties.attension);
+                Debug.Log(properties.attension);
+                yield return new WaitForSeconds(1.0f);
+            }
         }
         yield return null;
     }
@@ -73,6 +76,7 @@ public class GameManager : MonoBehaviour
     {
         properties.attension = 100;
         properties.inGame = true;
+        properties.timerSwitch = true;
         properties.attensionLog.Clear();
         properties.uiMode.Value = UIMode.Main;
         StartCoroutine("LogServer");
@@ -88,7 +92,7 @@ public class GameManager : MonoBehaviour
     {
         List<int> numbers = new List<int>();
         ransu = new List<int>();
-        for (int i = 0; i <= 4; i++)
+        for (int i = 0; i < actionDB.levels.Count; i++)
         {
             numbers.Add(i);
         }
@@ -122,10 +126,10 @@ public class GameManager : MonoBehaviour
         //Debug.Log(ransu[0]);
         properties.uiMode.Value = UIMode.Action;
 
-        // Effect‚Í³•‰‚Ì’l‚ð“®‚­
+        // Effect‚Í30`-20
         properties.attension -= actionDB.levels[ransu[num]].Effect;
 
-        for (int element = 0; element < 2; element++)
+        for (int element = 0; element < actionDB.levels[ransu[num]].line.Count; element++)
         {
             auto.sprite = auto_0;
             wordListIndex = ransu[num];

@@ -18,7 +18,6 @@ public class Trick : MonoBehaviour
     [SerializeField] List<string> messageList = new List<string>();
     [SerializeField] Text action;
     [SerializeField] float wordSpeed;
-    int wordListIndex = 0;
     GameObject Audio;
     AudioManager audioManager;
 
@@ -30,13 +29,13 @@ public class Trick : MonoBehaviour
     public void trick()
     {
         properties.uiMode.Value = UIMode.Main;
-        if (properties.attension > 100)
+        if (properties.attension < 30)
         {
             properties.isSuccessTrick = true;
             properties.uiMode.Value = UIMode.Trick;
             audioManager.TrickBGM();
             Debug.Log("成功！！！！！！！");
-            load.LoadResult();
+            StartCoroutine("SucsessTrick");
 
         } else
         {
@@ -45,12 +44,19 @@ public class Trick : MonoBehaviour
         }
     }
 
+    IEnumerator SucsessTrick()
+    {
+        yield return new WaitForSeconds(2.5f);
+        load.LoadResult();
+    }
+
     IEnumerator FailedTrick()
     {
         if (properties.isSuccessTrick == false)
         {
             attention.sprite = attention_img;
             int wordCount = 0;
+            int wordListIndex = 0;
             action.text = "";
             properties.uiMode.Value = UIMode.Action;
             while (messageList[wordListIndex].Length > wordCount)
@@ -58,11 +64,12 @@ public class Trick : MonoBehaviour
                 auto.sprite = auto_0;
                 action.text += messageList[wordListIndex][wordCount];
                 wordCount++;
+                wordSpeed = wordCount / 100;
                 yield return new WaitForSeconds(wordSpeed);
             }
             auto.sprite = auto_1;
             yield return new WaitForSeconds(2.5f);
-            load.LoadResult();
         }
+        load.LoadResult();
     }
 }
