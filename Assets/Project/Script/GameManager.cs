@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
-        nameplate.text = properties.enemyname[properties.EnemyLevel];
+        nameplate.text = "ƒŒƒxƒ‹" + properties.EnemyLevel + ":" + properties.enemyname[properties.EnemyLevel];
         properties.isSuccessTrick = false;
         properties.attension = 100;
         properties.inGame = true;

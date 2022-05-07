@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae386ffcc3187f14e80fdc8b81ab1de7, type: 3}
   m_Name: irony
   m_EditorClassIdentifier: 
-  actionName: "test\u306E\u884C\u52D5"
-  Effect: 0
-  line: []
+  actionName: "\u76AE\u8089\u3092\u8A00\u3046"
+  Effect: 10
+  line:
+  - "\u30B7\u30B9\u30C6\u30E0\uFF1A\u3042\u306A\u305F\u306F\u30B7\u30CB\u30AB\u30EB\u306A\u7B11\u307F\u3092\u6D6E\u304B\u3079\u305F"
