@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameProperties : ScriptableObject
 {
     public bool inGame;
-    public bool firstPlay;
+    public bool firstPlay = true;
     public bool firstWin;
     public bool isSuccessTrick;
     public int score;

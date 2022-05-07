@@ -492,7 +492,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 671229707}
-  - component: {fileID: 671229706}
   - component: {fileID: 671229708}
   m_Layer: 0
   m_Name: GameManager
@@ -501,31 +500,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &671229706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671229705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f17a5b5715b9094eadd216bf00d4ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  properties: {fileID: 11400000, guid: 015cf51adbda28c4eb12f3311f716b27, type: 2}
-  actionDB: {fileID: 11400000, guid: caf85a67839d0174b8e7d58fcb2a9c75, type: 2}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  action: {fileID: 0}
-  ransu: 
-  wordSpeed: 0
-  auto: {fileID: 0}
-  auto_0: {fileID: 8043091600683127539, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
-  auto_1: {fileID: 919690070564659940, guid: 3c189c8a47ee3c645a078cf609b260d8, type: 3}
-  timer: {fileID: 0}
-  rsf: {fileID: 0}
 --- !u!4 &671229707
 Transform:
   m_ObjectHideFlags: 0

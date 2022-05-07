@@ -45,11 +45,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator firstPlay()
     {
-        if (properties.firstPlay == true)
-        {
-            properties.uiMode.Value = UIMode.Tutolial;
-            yield return new WaitForSeconds(2.0f);
-        }
+        properties.uiMode.Value = UIMode.Tutolial;
+        yield return new WaitForSeconds(2.0f);
+        properties.firstPlay = false;
     }
 
     IEnumerator TimerWatch()
@@ -73,12 +71,13 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
-        properties.firstPlay = true;
         properties.attension = 100;
         properties.inGame = true;
         properties.attensionLog.Clear();
-        StartCoroutine("firstPlay");
-        properties.firstPlay = false;
+        if (properties.firstPlay == true)
+        { 
+            StartCoroutine("firstPlay");
+        }
         properties.uiMode.Value = UIMode.Main;
         StartCoroutine("LogServer");
         LoadAction();

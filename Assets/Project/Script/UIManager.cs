@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         IDisposable subscription = gameProperties.uiMode.Subscribe(x => {
-                this.gameObject.SetActive(x == myUIelementsMode);          
-        });
+            this.gameObject.SetActive(x == myUIelementsMode);
+        }).AddTo(this.gameObject);
     } 
 }
