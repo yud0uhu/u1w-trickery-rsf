@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    [SerializeField] AudioClip bottunSE;
+    [SerializeField] AudioClip buttonSE;
+    [SerializeField] AudioClip resultSE;
     public void LoadGame()
     {
         AudioManager.SE_Play(bottunSE);
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        AudioManager.SE_Play(buttonSE);
     }
 
     public void LoadResult()
     {
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        AudioManager.SE_Play(resultSE);
     }
 
 }

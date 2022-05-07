@@ -14,6 +14,7 @@ public class GameProperties : ScriptableObject
     public int score;
     public double restTime;
     public bool timerSwitch;
+    public bool timeOver=false;
     public int attension;
     public List<int> attensionLog;
     public ReactiveProperty<UIMode> uiMode;
