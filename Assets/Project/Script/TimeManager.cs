@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
 
+    [SerializeField] GameProperties properties;
     // フレームレートを1/60秒に固定
     void Awake()
     {
@@ -13,7 +14,6 @@ public class TimeManager : MonoBehaviour
     }
 
     private float countup = 0.0f;
-    private float timeLimit = 60f;
     [SerializeField] Image timer_fill;
     public float effect;
 
@@ -29,6 +29,7 @@ public class TimeManager : MonoBehaviour
             countup += Time.deltaTime;
             effect = countup / 60;
             timer_fill.fillAmount = effect;
+            properties.restTime = countup;
         }
     }
 
