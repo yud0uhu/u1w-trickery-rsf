@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
             {
                 // ゲームオーバー演出
                 properties.isSuccessTrick = false;
+                properties.timeOver = true;
                 trick.trick();
             }
             yield return null;
