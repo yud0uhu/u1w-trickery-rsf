@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
-    public LoadScene load;
+    private LoadScene load;
     private Trick trick;
+    public Tutorial tutorial;
 
     public List<int> ransu;
 
@@ -29,25 +30,24 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        properties.firstPlay = true;
         InitGame();
     }
 
     IEnumerator LogServer()
     {
-        while (properties.inGame==true) {
+        while (properties.inGame==true & properties.timerSwitch==true) {
             properties.attensionLog.Add(properties.attension);
             Debug.Log(properties.attension);
-            //Debug.Log(properties.attensionLog[1]);
             yield return new WaitForSeconds(1.0f);
         }
         yield return null;
     }
 
-    IEnumerator firstPlay()
+    private void firstPlay()
     {
-        properties.uiMode.Value = UIMode.Tutolial;
-        yield return new WaitForSeconds(2.0f);
-        properties.firstPlay = false;
+        properties.uiMode.Value = UIMode.Tutorial;
+        tutorial.LoadTutorial();
     }
 
     IEnumerator TimerWatch()
@@ -74,14 +74,14 @@ public class GameManager : MonoBehaviour
         properties.attension = 100;
         properties.inGame = true;
         properties.attensionLog.Clear();
-        if (properties.firstPlay == true)
-        { 
-            StartCoroutine("firstPlay");
-        }
         properties.uiMode.Value = UIMode.Main;
         StartCoroutine("LogServer");
         LoadAction();
         StartCoroutine("TimerWatch");
+        if (properties.firstPlay == true)
+        {
+            firstPlay();
+        }
     }
 
     void LoadAction()
