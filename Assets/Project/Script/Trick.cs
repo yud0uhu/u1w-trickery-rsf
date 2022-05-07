@@ -19,6 +19,14 @@ public class Trick : MonoBehaviour
     [SerializeField] Text action;
     [SerializeField] float wordSpeed;
     int wordListIndex = 0;
+    GameObject Audio;
+    AudioManager audioManager;
+
+    private void Start()
+    {
+        Audio = GameObject.FindGameObjectWithTag("Audio");
+        audioManager = Audio.GetComponent<AudioManager>();
+    }
     public void trick()
     {
         properties.uiMode.Value = UIMode.Main;
@@ -26,6 +34,7 @@ public class Trick : MonoBehaviour
         {
             properties.isSuccessTrick = true;
             properties.uiMode.Value = UIMode.Trick;
+            audioManager.TrickBGM();
             Debug.Log("成功！！！！！！！");
             load.LoadResult();
 

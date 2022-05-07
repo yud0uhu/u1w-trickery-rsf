@@ -52,4 +52,9 @@ public class AudioManager : MonoBehaviour
         BGM_audio.clip = clip;
         BGM_audio.Play();
     }
+
+    public void TrickBGM()
+    {
+        Debug.Log("aaa");
+    }
 }
