@@ -17,12 +17,12 @@ public class Tutorial : MonoBehaviour
 
     public void LoadTutorial()
     {
+        properties.timerSwitch = false;
         StartCoroutine("TutorialAction");
     }
 
     IEnumerator TutorialAction()
     {
-        properties.timerSwitch = false;
         while (wordListIndex < 3)
         {
             int wordCount = 0;
