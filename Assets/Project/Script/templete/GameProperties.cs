@@ -18,4 +18,6 @@ public class GameProperties : ScriptableObject
     public int attension;
     public List<int> attensionLog;
     public ReactiveProperty<UIMode> uiMode;
+    public int EnemyLevel = 0;
+    public List<string> enemyname;
 }
