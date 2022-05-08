@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: GameProperties
   m_EditorClassIdentifier: 
   inGame: 1
-  firstPlay: 1
+  firstPlay: 0
   firstWin: 0
-  isSuccessTrick: 1
-  score: 740000
-  restTime: 23.890844345092773
+  isSuccessTrick: 0
+  score: 273000
+  restTime: 1.8677924871444702
   timerSwitch: 1
   timeOver: 0
-  attension: 20
-  attensionLog: 640000006400000041000000410000004100000041000000410000004100000041000000410000003700000037000000370000003700000037000000370000001400000014000000140000001400000014000000140000001400000014000000
+  attension: 100
+  attensionLog: 6400000064000000
   uiMode:
-    value: 4
+    value: 2
   EnemyLevel: 0
   enemyname:
   - "\u30AB\u30E2\u306E\u30B8\u30E7\u30FC\u30B8"
