@@ -76,8 +76,8 @@ public class ResultUIManager : MonoBehaviour
     }
     public void OnclickShare()
     {
-        gameProperties.score = 0;
-        gameProperties.EnemyLevel = 0;
+        //gameProperties.score = 0;
+        //gameProperties.EnemyLevel = 0;
         AudioManager.SE_Play(button);
         audioManager.returnBGM();
         naichilab.UnityRoomTweet.Tweet("trick_rsf", "あなたのイカサマは"+gameProperties.score.ToString()+"点です", "ikasama_royal_straight_flush");

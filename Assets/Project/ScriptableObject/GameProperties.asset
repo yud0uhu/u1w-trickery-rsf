@@ -15,13 +15,13 @@ MonoBehaviour:
   inGame: 1
   firstPlay: 1
   firstWin: 0
-  isSuccessTrick: 0
-  score: 0
-  restTime: 13.499099731445312
-  timerSwitch: 0
+  isSuccessTrick: 1
+  score: 740000
+  restTime: 23.890844345092773
+  timerSwitch: 1
   timeOver: 0
-  attension: 100
-  attensionLog: 
+  attension: 20
+  attensionLog: 640000006400000041000000410000004100000041000000410000004100000041000000410000003700000037000000370000003700000037000000370000001400000014000000140000001400000014000000140000001400000014000000
   uiMode:
     value: 4
   EnemyLevel: 0
