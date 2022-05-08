@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text third;
     [SerializeField] Text action;
     [SerializeField] Text nameplate;
+    [SerializeField] Text levelplate;
     [SerializeField] List<GameObject> actionWindowList = new List<GameObject>();
     private LoadScene load;
     public Trick trick;
@@ -78,7 +79,16 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
-        nameplate.text = "ƒŒƒxƒ‹" + properties.EnemyLevel + ":" + properties.enemyname[properties.EnemyLevel];
+        if (properties.EnemyLevel <= 3)
+        {
+            levelplate.text += properties.EnemyLevel;
+        }
+        else
+        {
+            properties.EnemyLevel = 3;
+            levelplate.text = "3+";
+        }
+        nameplate.text = properties.enemyname[properties.EnemyLevel];
         properties.isSuccessTrick = false;
         properties.attension = 100;
         properties.inGame = true;
