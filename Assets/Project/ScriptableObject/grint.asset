@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae386ffcc3187f14e80fdc8b81ab1de7, type: 3}
-  m_Name: provoke
+  m_Name: grint
   m_EditorClassIdentifier: 
-  actionName: "\u6311\u767A\u3059\u308B"
+  actionName: "\u7B11\u3046"
   Effect: -10
   line:
-  - "\u3042\u306A\u305F\uFF1A\u4ECA\u65E5\u306F\u8ABF\u5B50\u304C\u3044\u3044\u306A\u3002\u305D\u3063\u3061\u306F\u3069\u3046\u3060\u3044\uFF1F"
-  - "\u76F8\u624B\uFF1A\u76AE\u8089\u304C\u3046\u307E\u3044\u3058\u3083\u306A\u3044\u304B"
+  - "\u76F8\u624B\uFF1A\u305D\u3093\u306A\u306B\u3044\u3044\u624B\u672D\u306A\u306E\u304B\u3044\uFF1F"
+  - "\u3042\u306A\u305F\uFF1A\u8A00\u3046\u3068\u601D\u3046\u304B\uFF1F"
