@@ -46,6 +46,10 @@ public class Trick : MonoBehaviour
         {
             clearLine = 0;
         }
+        if (properties.attension < 0)
+        {
+            properties.attension = 0;
+        }
         properties.uiMode.Value = UIMode.Main;
         Debug.Log("クリアライン" + clearLine);
         Debug.Log("警戒度" + properties.attension);
