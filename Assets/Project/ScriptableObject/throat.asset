@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: throat
   m_EditorClassIdentifier: 
   actionName: "\u54B3\u6255\u3044\u3092\u3059\u308B"
-  Effect: -10
+  Effect: -5
   line:
   - "\u3042\u306A\u305F\uFF1A\u30B2\u30DB\u30C3\u30B4\u30DB\u30C3\u30AC\u30DB\u30C3......\u30D5\u30F3"
   - "\u76F8\u624B\uFF1A\u9152\u306E\u98F2\u307F\u3059\u304E\u304B\uFF1F"
