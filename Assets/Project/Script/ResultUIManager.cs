@@ -67,6 +67,7 @@ public class ResultUIManager : MonoBehaviour
     }
     public void OnclickEnd()
     {
+        gameProperties.score = 0;
         gameProperties.EnemyLevel = 0;
         AudioManager.SE_Play(button);
         audioManager.returnBGM();
