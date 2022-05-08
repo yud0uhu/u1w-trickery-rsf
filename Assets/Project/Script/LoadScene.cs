@@ -18,7 +18,7 @@ public class LoadScene : MonoBehaviour
     {
         AudioManager.PitchChange(1.0f);
         AudioManager.VolumeChange(0.5f);
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        SceneManager.LoadScene("GameOver2", LoadSceneMode.Single);
         AudioManager.SE_Play(resultSE);
     }
 
