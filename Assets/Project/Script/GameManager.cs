@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text second;
     [SerializeField] Text third;
     [SerializeField] Text action;
+    [SerializeField] Text nameplate;
+    [SerializeField] List<GameObject> actionWindowList = new List<GameObject>();
     private LoadScene load;
     public Trick trick;
     public Tutorial tutorial;
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
+        nameplate.text = "ƒŒƒxƒ‹" + properties.EnemyLevel + ":" + properties.enemyname[properties.EnemyLevel];
         properties.isSuccessTrick = false;
         properties.attension = 100;
         properties.inGame = true;
@@ -120,13 +123,14 @@ public class GameManager : MonoBehaviour
     public void onClickAction(int num)
     {
         AudioManager.SE_Play(buttonSE);
-        StartCoroutine(Action(num));
+        actionWindowList[num].GetComponent<RectTransform>().DOPunchRotation(new Vector3(90f, 180f, -27f), 0.2f, 10, 1f).OnComplete(() => {
+            StartCoroutine(Action(num));
+        });
     }
 
 
     IEnumerator Action(int num)
     {
-
         //Debug.Log(ransu[0]);
         properties.uiMode.Value = UIMode.Action;
 

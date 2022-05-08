@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RuckyCointoss
   m_EditorClassIdentifier: 
   actionName: "\u30B3\u30A4\u30F3\u30C8\u30B9"
-  Effect: -20
+  Effect: -10
   line:
   - "\u30B7\u30B9\u30C6\u30E0\uFF1A\u3042\u306A\u305F\u306F\u5929\u9AD8\u304F\u30B3\u30A4\u30F3\u3092\u6295\u3052\u305F"
   - "\u30D7\u30EC\u30A4\u30E4\u30FC\uFF1A\uFF08......\u88CF\u304B\uFF09"

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Trick : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class Trick : MonoBehaviour
     AudioManager audioManager;
     [SerializeField] AudioClip trickSuccessSE;
     [SerializeField] AudioClip trickFailedSE;
+    int clearLine;
+    [SerializeField] GameObject actionWindow;
+    [SerializeField] GameObject flash;
 
     private void Start()
     {
@@ -30,33 +34,57 @@ public class Trick : MonoBehaviour
     }
     public void trick()
     {
+        if (properties.firstWin == false)
+        {
+            clearLine = 30;
+        }
+        clearLine += properties.EnemyLevel * 5;
         properties.uiMode.Value = UIMode.Main;
-        if (properties.attension < 30)
+        Debug.Log("クリアライン"+clearLine);
+        Debug.Log(properties.attension);
+        if (properties.attension < clearLine)
         {
             properties.isSuccessTrick = true;
             properties.uiMode.Value = UIMode.Trick;
-            AudioManager.VolumeChangeMoment(0.5f);
             audioManager.TrickBGM();
             Debug.Log("成功！！！！！！！");
-            StartCoroutine("SucsessTrick");
+            SucsessTrick();
 
         } else
         {
             properties.isSuccessTrick = false;
-            StartCoroutine("FailedTrick");
+            FailedTrick();
         }
     }
 
-    IEnumerator SucsessTrick()
+    void SucsessTrick()
     {
-        AudioManager.SE_Play(trickSuccessSE);
-        yield return new WaitForSeconds(2.5f);
+        actionWindow.GetComponent<RectTransform>().DOShakePosition(1f, 5f, 30, 1, false, true).SetEase(Ease.OutBack, 5f).OnComplete(() =>
+        {
+            StartCoroutine("ShowText");
+            AudioManager.SE_Play(trickSuccessSE);
+            Invoke("LoadResult", 1.0f);
+        });
+    }
+
+    void FailedTrick()
+    {
+        actionWindow.SetActive(true);
+        actionWindow.GetComponent<RectTransform>().DOMoveY(2f,0.3f).SetEase(Ease.OutBack).OnComplete(async () =>
+        {
+            StartCoroutine("ShowText");
+            AudioManager.SE_Play(trickFailedSE);
+            Invoke("LoadResult",1.0f);
+        });
+    }
+
+    void LoadResult()
+    {
         load.LoadResult();
     }
 
-    IEnumerator FailedTrick()
+    IEnumerator ShowText()
     {
-        AudioManager.SE_Play(trickFailedSE);
         if (properties.isSuccessTrick == false)
         {
             attention.sprite = attention_img;
@@ -64,7 +92,7 @@ public class Trick : MonoBehaviour
             int wordListIndex = 0;
             action.text = "";
             properties.uiMode.Value = UIMode.Action;
-            if (properties.timeOver==true)
+            if (properties.timeOver == false)
             {
                 wordListIndex = 1;
             }
@@ -78,7 +106,11 @@ public class Trick : MonoBehaviour
             }
             auto.sprite = auto_1;
             yield return new WaitForSeconds(2.5f);
+        } else
+        {
+            // 成功時のカットイン
+            var image = flash.GetComponent<Image>();
+            DOTween.To(() => image.color, x => image.color = x, new Color32(0, 0, 0, 255), 1f).SetEase(Ease.Flash);
         }
-        load.LoadResult();
     }
 }
