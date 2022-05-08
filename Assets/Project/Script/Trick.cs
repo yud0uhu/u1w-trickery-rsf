@@ -38,10 +38,17 @@ public class Trick : MonoBehaviour
         {
             clearLine = 30;
         }
-        clearLine += properties.EnemyLevel * 5;
+        if (clearLine >= 0)
+        {
+            clearLine -= properties.EnemyLevel * 5;
+        }
+        else
+        {
+            clearLine = 0;
+        }
         properties.uiMode.Value = UIMode.Main;
-        Debug.Log("クリアライン"+clearLine);
-        Debug.Log(properties.attension);
+        Debug.Log("クリアライン" + clearLine);
+        Debug.Log("警戒度" + properties.attension);
         if (properties.attension < clearLine)
         {
             properties.isSuccessTrick = true;
@@ -50,7 +57,8 @@ public class Trick : MonoBehaviour
             Debug.Log("成功！！！！！！！");
             SucsessTrick();
 
-        } else
+        }
+        else
         {
             properties.isSuccessTrick = false;
             FailedTrick();
