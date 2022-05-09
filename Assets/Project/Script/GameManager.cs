@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
         {
             while (properties.inGame == true)
             {
+                if (properties.attension < 0)
+                {
+                    properties.attension = 0;
+                }
                 properties.attensionLog.Add(properties.attension);
                 Debug.Log(properties.attension);
                 yield return new WaitForSeconds(1.0f);
@@ -89,6 +93,7 @@ public class GameManager : MonoBehaviour
             levelplate.text = "3+";
         }
         nameplate.text = properties.enemyname[properties.EnemyLevel];
+        properties.timeOver = false;
         properties.isSuccessTrick = false;
         properties.attension = 100;
         properties.inGame = true;

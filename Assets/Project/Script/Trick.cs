@@ -46,14 +46,10 @@ public class Trick : MonoBehaviour
         {
             clearLine = 0;
         }
-        if (properties.attension < 0)
-        {
-            properties.attension = 0;
-        }
         properties.uiMode.Value = UIMode.Main;
         Debug.Log("クリアライン" + clearLine);
         Debug.Log("警戒度" + properties.attension);
-        if (properties.attension < clearLine)
+        if (properties.attension < clearLine && properties.timeOver == false)
         {
             properties.isSuccessTrick = true;
             properties.uiMode.Value = UIMode.Trick;
@@ -101,10 +97,10 @@ public class Trick : MonoBehaviour
         {
             attention.sprite = attention_img;
             int wordCount = 0;
-            int wordListIndex = 0;
+            int wordListIndex=0;
             action.text = "";
             properties.uiMode.Value = UIMode.Action;
-            if (properties.timeOver == false)
+            if (properties.timeOver == true)
             {
                 wordListIndex = 1;
             }
